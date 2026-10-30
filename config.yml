@@ -1,2 +1,10 @@
-# Rhitta peut-elle détruire les blocs avec son explosion solaire ?
-rhitta-block-damage: true
+lostvayne:
+  cooldown: 30
+  clones: 4
+  duration: 30
+chastiefol:
+  cooldown-forme-0: 3
+  damage-forme-0: 10
+rhitta:
+  block-damage: true
+  charge-per-second: 5
