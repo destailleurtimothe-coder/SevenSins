@@ -1,10 +1,138 @@
+# ===== SevenSins : configuration des 7 Tresors Sacres =====
+# Cooldowns en secondes, durees en secondes, degats en points de vie (1 coeur = 2).
+# Apres modification : redemarre le serveur.
+
+# --- Meliodas ---
 lostvayne:
   cooldown: 30
   clones: 4
   duration: 30
+  clone-damage: 8
+  counter-multiplier: 2.0   # Contre Total : degats renvoyes x2
+
+# --- King (une section par forme) ---
 chastiefol:
-  cooldown-forme-0: 3
-  damage-forme-0: 10
+  chastiefol:
+    cooldown: 3
+    damage: 10
+    range: 25
+  guardian:
+    cooldown: 40
+    duration: 30
+  fossilization:
+    cooldown: 20
+    duration: 5
+  sunflower:
+    cooldown: 45
+    damage: 3
+  increase:
+    cooldown: 10
+    blades: 12
+    damage: 3
+  yggdra-cloth:
+    cooldown: 60
+  luminosity:
+    cooldown: 30
+  pollen-garden:
+    cooldown: 40
+
+# --- Diane ---
+gideon:
+  quake:
+    cooldown: 20
+    damage: 8
+    radius: 8
+  golem:
+    cooldown: 60
+    duration: 30
+  lightning:
+    cooldown: 10
+
+# --- Escanor ---
 rhitta:
-  block-damage: true
-  charge-per-second: 5
+  block-damage: true        # l'explosion detruit les blocs
+  cooldown: 5
+  charge-per-second: 5      # % de charge gagne par seconde en main
+  min-charge: 10            # % minimum pour tirer
+  min-power: 2
+  max-power: 8
+
+# --- Gowther ---
+herritt:
+  arrow-effect-duration: 8
+  illusion:
+    cooldown: 40
+    radius: 30
+    duration: 15
+
+# --- Ban ---
+courechouse:
+  cooldown: 60
+  radius: 15
+  duration: 15
+  combo-max: 5
+  combo-bonus: 0.1          # +10% de degats par coup enchaine
+
+# --- Merlin ---
+aldan:
+  clairvoyance:
+    cooldown: 30
+    radius: 64
+  arcane:
+    cooldown: 15
+    damage: 10
+  soul-save:
+    cooldown: 300
+    health: 10
+
+# ===== COMMANDES =====
+# Un redemarrage est necessaire pour changer un nom ou un alias.
+# Les messages se changent avec /sin reload.
+# Couleurs : codes & (ex: &a vert, &c rouge, &6 or).
+commands:
+  permission: "sevensins.admin"
+
+  # /sin give <arme> [joueur] | /sin giveall [joueur] | /sin list | /sin reload
+  main:
+    name: sin
+    aliases: [sevensins, treasures]
+
+  # Une commande par arme : /<nom> [joueur] donne l'arme
+  weapons:
+    lostvayne:
+      enabled: true
+      name: lostvayne
+      aliases: []
+    chastiefol:
+      enabled: true
+      name: chastiefol
+      aliases: []
+    gideon:
+      enabled: true
+      name: gideon
+      aliases: []
+    rhitta:
+      enabled: true
+      name: rhitta
+      aliases: []
+    herritt:
+      enabled: true
+      name: herritt
+      aliases: []
+    courechouse:
+      enabled: true
+      name: courechouse
+      aliases: []
+    aldan:
+      enabled: true
+      name: aldan
+      aliases: []
+
+  messages:
+    no-permission: "&cTu n'as pas la permission."
+    unknown-weapon: "&cArme inconnue."
+    player-not-found: "&cJoueur introuvable."
+    given: "&a%weapon% donne a %player%."
+    given-all: "&aLes 7 tresors ont ete donnes a %player%."
+    reloaded: "&aConfiguration rechargee."
+    list: "&6Tresors : lostvayne, chastiefol, gideon, rhitta, herritt, courechouse, aldan\n&7/sin give <arme> [joueur] | /sin giveall [joueur] | /sin reload"
