@@ -1,6 +1,6 @@
 lostvayne:
   cooldown: 30
-  clones: 4
+  clones: 4 
   duration: 30
 chastiefol:
   cooldown-forme-0: 3
