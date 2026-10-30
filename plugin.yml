@@ -1,0 +1,12 @@
+name: SevenSins
+version: 1.0.0
+main: fr.sevensins.SevenSins
+api-version: '1.21'
+description: Les 7 Tresors Sacres de Seven Deadly Sins
+commands:
+  sin:
+    description: Gestion des tresors sacres
+    usage: /sin <give|giveall|list> [arme] [joueur]
+permissions:
+  sevensins.admin:
+    default: op
